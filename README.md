@@ -1,5 +1,7 @@
 # tess-decomb
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.21443304.svg)](https://doi.org/10.5281/zenodo.21443304)
+
 Field-star eigen-systematics "de-comb" for TESS moving-target (asteroid)
 photometry: separate real rotation signals from the TESS momentum-dump alias
 comb (periods at 328.8/n h) and scattered-light systematics, by projecting
@@ -83,7 +85,8 @@ The eigen-basis cache defaults to `./sysrem_cache` (override with the
 ## Citing
 
 If you use this code, cite the RNAAS note (DOI to be added on publication)
-and this repository (see `CITATION.cff`). The method builds on SysRem
+and the archived software (doi:10.5281/zenodo.21443304; all versions:
+doi:10.5281/zenodo.21443303; see `CITATION.cff`). The method builds on SysRem
 (Tamuz, Mazeh & Zucker 2005) and the TFA/CBV family of ensemble-systematics
 approaches (Kovacs et al. 2005; Smith et al. 2012), applied to moving-target
 photometry extracted with `tess-asteroids` (Tuson et al. 2025).

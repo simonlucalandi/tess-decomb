@@ -6,7 +6,12 @@ authors:
   - family-names: Landi
     given-names: Simonluca
 version: 0.1.0
+doi: 10.5281/zenodo.21443304
 date-released: 2026-07-19
 license: MIT
 repository-code: "https://github.com/simonlucalandi/tess-decomb"
 url: "https://github.com/simonlucalandi/tess-decomb"
+identifiers:
+  - type: doi
+    value: 10.5281/zenodo.21443303
+    description: "Concept DOI (all versions)"
