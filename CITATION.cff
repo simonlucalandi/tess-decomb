@@ -5,6 +5,7 @@ type: software
 authors:
   - family-names: Landi
     given-names: Simonluca
+    orcid: "https://orcid.org/0009-0009-3410-8443"
 version: 0.1.0
 doi: 10.5281/zenodo.21443304
 date-released: 2026-07-19
