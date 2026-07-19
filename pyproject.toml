@@ -1,0 +1,26 @@
+[build-system]
+requires = ["setuptools>=64"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "tess-decomb"
+version = "0.1.0"
+description = "Field-star eigen-systematics de-comb for TESS moving-target (asteroid) photometry"
+readme = "README.md"
+license = { text = "MIT" }
+authors = [{ name = "Simonluca Landi" }]
+requires-python = ">=3.9"
+dependencies = [
+    "numpy",
+    "pandas",
+    "astropy",
+    "astroquery",
+    "requests",
+]
+
+[project.scripts]
+tess-decomb = "tess_decomb.sysrem:main"
+tess-decomb-check = "tess_decomb.check:main"
+
+[tool.setuptools]
+packages = ["tess_decomb"]

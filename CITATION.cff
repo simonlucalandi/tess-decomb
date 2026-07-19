@@ -1,0 +1,10 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below, together with the accompanying RNAAS research note (DOI to be added on publication)."
+title: "tess-decomb: field-star eigen-systematics de-comb for TESS moving-target photometry"
+type: software
+authors:
+  - family-names: Landi
+    given-names: Simonluca
+version: 0.1.0
+date-released: 2026-07-19
+license: MIT
