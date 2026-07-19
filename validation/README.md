@@ -16,7 +16,7 @@ are the V*_RESULTS.md files; raw artifacts are the CSVs.
 
 `scripts/` contains the exact campaign scripts for transparency. They expect
 the survey's internal directory layout (`tess-<family>/lc_<num>_s<sector>.csv`
-plus per-family census tables) and private loader modules, so they are NOT
+plus per-family census tables) and private loader modules (the survey's internal `themis_census`, `census_refine`, and batch drivers), so they are NOT
 runnable from this repository alone; the algorithms they implement are all
 present in the released `tess_decomb` package. Column meanings are documented
 in the results files.
