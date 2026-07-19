@@ -4,19 +4,17 @@
 PURPOSE
 -------
 Remove the shared per-sector instrumental systematics (momentum-dump comb at
-328.8/n h, scattered-light ramps) from our moving-target light curves BY
-PROJECTION on an eigen-basis learned from ordinary field stars observed in the
-same sector -- instead of merely flagging comb proximity after the fact
-(census_refine.py's current approach).
+328.8/n h, scattered-light ramps) from moving-target light curves BY
+PROJECTION on an eigen-basis learned from ordinary field stars observed in
+the same sector -- removal, instead of comb-proximity avoidance.
 
-METHOD (simplified / SysRem-like: PCA on a stellar ensemble + LSQ projection,
-not full iterative SysRem with per-point weights -- deliberate for a
-prototype):
+METHOD (PCA on a stellar ensemble + unweighted LSQ projection; deliberately
+NOT full iterative SysRem with per-point weights -- see note below):
 
-  1. reference_ensemble(sector): download SAP-flux light curves for ~200
+  1. build_eigenbasis(sector): download SAP-flux light curves for ~200
      ordinary SPOC 2-min targets from the same TESS sector (sector-wide, not
-     camera/ccd-matched -- see report for rationale), cached under
-     sysrem_cache/.
+     camera/ccd-matched: the dominant comb and scattered-light components are
+     shared across the sector), cached under sysrem_cache/.
   2. Bin every reference star (and, at fit time, the target) onto a common
      30-min time grid; build a (stars x time) matrix of median-normalized
      mag deviations; take its SVD; keep the top K right-singular (time-domain)
@@ -24,9 +22,17 @@ prototype):
   3. Fit an asteroid's UNBINNED light curve as offset + linear combination of
      the K eigen-systematics (interpolated to the asteroid's own timestamps),
      least squares; subtract the systematics part (not the offset).
-  4. Validate: (a) signal preservation on a confirmed slow rotator,
-     (b) comb suppression on two dump-alias suspects, (c) synthetic-signal
-     injection/recovery on a quiet held-out reference star.
+  4. Smoke-validate: synthetic-signal injection/recovery on a quiet held-out
+     reference star that never entered the SVD (`validate` subcommand).
+
+NOTE ON THE SIMPLIFICATION. The unweighted, non-iterative projection with
+fixed K = 5 is not a prototype shortcut: it is the exact estimator the
+validation campaign calibrated. The 17,372-injection recovery rates, the
+kill/survive asymmetry, the ROC-derived thresholds, the composition
+bootstrap, and the 0.45x-baseline validity domain (validation/ in this
+repository) all apply to THIS variant. Substituting full iterative SysRem
+(or changing K) changes the estimator and voids those calibrations; any such
+change requires re-validation.
 
 Everything here builds from PUBLIC data: the eigen-basis is learned from SPOC
 2-min field-star light curves downloaded from MAST (cached locally). The full
