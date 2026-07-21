@@ -1,0 +1,18 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+build/
+dist/
+.eggs/
+
+# virtualenvs
+.venv/
+venv/
+
+# eigen-basis cache (rebuilt from MAST on demand; see TESS_DECOMB_CACHE)
+sysrem_cache/
+
+# OS / editor
+.DS_Store
+*.swp
