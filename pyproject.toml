@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "tess-decomb"
-version = "0.1.0"
+version = "0.1.1"
 description = "Field-star eigen-systematics de-comb for TESS moving-target (asteroid) photometry"
 readme = "README.md"
 license = { text = "MIT" }
