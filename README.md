@@ -257,6 +257,21 @@ doi:10.5281/zenodo.21443303; see `CITATION.cff`). The method builds on SysRem
 approaches (Kovacs et al. 2005; Smith et al. 2012), applied to moving-target
 photometry extracted with `tess-asteroids` (Tuson et al. 2025).
 
+### Which version does the research note describe?
+
+The RNAAS note cites **v0.1.0** (doi:10.5281/zenodo.21443304), and that is the
+archive to consult when checking the note's numbers. Releases since then change
+documentation and validation artifacts only: the `tess_decomb` package code,
+the thresholds, and every reported verdict are unchanged from v0.1.0. The
+version DOI in the note therefore remains the correct citation for it, and
+resolves permanently.
+
+| Release | DOI | Package code |
+|--|--|--|
+| v0.1.0 (cited by the note) | [10.5281/zenodo.21443304](https://doi.org/10.5281/zenodo.21443304) | baseline |
+| v0.1.1 (this README, explainer + figures) | [10.5281/zenodo.21475149](https://doi.org/10.5281/zenodo.21475149) | unchanged |
+| latest, whichever that is | [10.5281/zenodo.21443303](https://doi.org/10.5281/zenodo.21443303) | -- |
+
 ## License
 
 MIT (see LICENSE).
